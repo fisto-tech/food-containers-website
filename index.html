@@ -1,0 +1,834 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fisto - Containers with Character</title>
+
+    <!-- Primary Meta Tags -->
+    <meta name="title" content="Fisto - Containers with Character">
+    <meta name="description"
+        content="Discover premium food containers that keep your fresh ingredients happy. Experience interactive food characters and sleek packaging design.">
+    <meta name="keywords"
+        content="food containers, premium packaging, tamper evident containers, sweet box, microwave safe containers, leak proof containers, food grade plastic">
+    <meta name="author" content="Fisto Tech">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="assets/images/fisto-logo.svg">
+    <link rel="alternate icon" href="favicon.ico">
+    <link rel="apple-touch-icon" href="assets/images/fisto-logo.svg">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://fisto.tech/">
+    <meta property="og:title" content="Fisto - Containers with Character">
+    <meta property="og:description"
+        content="Discover premium food containers that keep your fresh ingredients happy. Experience interactive food characters and sleek packaging design.">
+    <meta property="og:image" content="assets/images/fisto-logo.svg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://fisto.tech/">
+    <meta property="twitter:title" content="Fisto - Containers with Character">
+    <meta property="twitter:description"
+        content="Discover premium food containers that keep your fresh ingredients happy. Experience interactive food characters and sleek packaging design.">
+    <meta property="twitter:image" content="assets/images/fisto-logo.svg">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Outfit:wght@300;400;600;800&family=Fredoka:wght@400;600;700&family=Plus+Jakarta+Sans:wght@300;400;600;700&family=Caveat:wght@400;700&family=Anton&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Chelsea+Market&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Croissant+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lilita+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bungee&display=swap" rel="stylesheet">
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="index.css?v=2">
+</head>
+
+<body class="custom-cursor-enabled">
+    <!-- PRELOADER -->
+    <div class="preloader">
+        <div class="ripple-container">
+            <div class="ripple-circle r-1"></div>
+            <div class="ripple-circle r-2"></div>
+            <div class="ripple-circle r-3"></div>
+        </div>
+    </div>
+
+    <!-- Custom Cursor -->
+    <div class="custom-cursor">
+        <span class="cursor-text">TICKLE ME</span>
+    </div>
+    <div class="cursor-dot"></div>
+
+    <!-- Noise Overlay for Premium Texture -->
+    <div class="noise-overlay"></div>
+
+    <!-- Header & Navbar -->
+    <header class="navbar">
+        
+        <div class="nav-container">
+            <a href="#" class="logo-custom">
+                <img src="assets/images/fisto-logo.svg" alt="FISTO Tech Pvt Ltd" class="fisto-svg-logo">
+            </a>
+
+            <div class="nav-right">
+                <div class="nav-socials">
+                    <a href="#" class="nav-social-icon">
+                        <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2"
+                            fill="none">
+                            <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                        </svg>
+                    </a>
+                    <a href="#" class="nav-social-icon">
+                        <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2"
+                            fill="none">
+                            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                        </svg>
+                    </a>
+                </div>
+
+                <button class="hamburger-btn" aria-label="Toggle Navigation">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                </button>
+            </div>
+        </div>
+
+        <nav class="full-screen-nav">
+            <ul class="nav-links-list">
+                <li><a href="#hero">HOME</a></li>
+                <li><a href="#about-us">ABOUT US</a></li>
+                <li><a href="#premium-products">PRODUCTS</a></li>
+                <li><a href="#why-choose-us">WHY CHOOSE US</a></li>
+                <li><a href="#footer">CONTACT</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Fixed Side Navigation Arrows (Visible only in explore section) -->
+    <button class="nav-arrow prev-arrow magnetic-btn" id="prev-slide-btn">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+            stroke-linecap="round" stroke-linejoin="round">
+            <line x1="19" y1="12" x2="5" y2="12"></line>
+            <polyline points="12 19 5 12 12 5"></polyline>
+        </svg>
+    </button>
+
+    <button class="nav-arrow next-arrow magnetic-btn" id="next-slide-btn">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+            stroke-linecap="round" stroke-linejoin="round">
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+            <polyline points="12 5 19 12 12 19"></polyline>
+        </svg>
+    </button>
+
+    <!-- Fixed Bottom Navigation Bar (Visible only in explore section) -->
+    <div class="fixed-bottom-nav">
+        <div class="bottom-features-icons">
+            <div class="feature-group left-group">
+                <div class="bottom-feature-item">
+                    <svg class="feature-icon-svg" width="55" height="55" viewBox="0 0 90 90" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <rect class="icon-accent-stroke" x="0.99" y="0.99" width="87.13" height="87.13" rx="43.56"
+                            stroke="#17B8FF" stroke-width="1.98" />
+                        <path
+                            d="M22.2 26.27V44.41C22.2 62.54 44.41 70.31 44.41 70.31C44.41 70.31 66.61 62.54 66.61 44.41V26.27L44.41 18.5L22.2 26.27Z"
+                            stroke="white" stroke-width="4.93" stroke-linecap="square" />
+                        <path d="M34.96 42.37L41.94 49.34L55.89 35.39" stroke="white" stroke-width="4.93"
+                            stroke-linecap="square" />
+                    </svg>
+                    <div class="feature-text-block">
+                        <span class="feature-label">FOOD</span>
+                        <span class="feature-sublabel">GRADE</span>
+                    </div>
+                </div>
+
+                <div class="nav-separator"></div>
+
+                <div class="bottom-feature-item">
+                    <svg class="feature-icon-svg" width="55" height="55" viewBox="0 0 90 90" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <rect class="icon-accent-stroke" x="0.99" y="0.99" width="87.13" height="87.13" rx="43.56"
+                            stroke="#17B8FF" stroke-width="1.98" />
+                        <path
+                            d="M61.06 51.81C61.06 62.03 54.63 68.46 44.41 68.46C34.18 68.46 27.75 62.03 27.75 51.81C27.75 40.84 39.69 26.03 43.35 21.75C43.48 21.6 43.64 21.48 43.83 21.39C44.01 21.31 44.21 21.27 44.41 21.27C44.61 21.27 44.8 21.31 44.99 21.39C45.17 21.48 45.33 21.6 45.46 21.75C49.12 26.03 61.06 40.84 61.06 51.81Z"
+                            stroke="white" stroke-width="3.7" stroke-miterlimit="10" />
+                        <path d="M54.58 52.73C54.58 54.94 53.7 57.06 52.14 58.62C50.58 60.18 48.46 61.06 46.25 61.06"
+                            stroke="white" stroke-width="3.7" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                    <div class="feature-text-block">
+                        <span class="feature-label">LEAK</span>
+                        <span class="feature-sublabel">PROOF</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="feature-group center-group">
+                <a href="#contact" class="shop-now-btn magnetic-btn">
+                    <span>SHOP NOW</span>
+                    <svg class="shop-cart-icon-svg" width="50" height="50" viewBox="0 0 75 75" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <rect class="icon-accent-stroke" x="1.42" y="1.42" width="72.14" height="72.14" rx="36.07"
+                            fill="#100F0E" stroke="#17B8FF" stroke-width="2.85" />
+                        <path
+                            d="M22.0497 21.0041C22.8038 20.9707 23.5529 21.1421 24.2173 21.5003C25.2358 22.0592 25.9514 22.9941 26.4136 24.1119L54.2086 24.1119C54.4067 24.1123 54.6022 24.1579 54.7801 24.245C54.958 24.3322 55.1138 24.4587 55.2356 24.6149C55.3574 24.7712 55.442 24.9531 55.4831 25.147C55.5241 25.3408 55.5206 25.5414 55.4726 25.7337L52.861 36.1799C52.798 36.4337 52.6603 36.6627 52.4657 36.8373C52.2711 37.0119 52.0285 37.1241 51.7694 37.1593L32.2401 39.7604L32.2348 39.7656C31.6525 39.8753 31.4253 40.4525 31.5114 41.0923C31.6002 41.7792 31.8849 42.3929 33.316 42.3929H48.9855C49.3318 42.3929 49.6639 42.5304 49.9088 42.7753C50.1537 43.0202 50.2912 43.3523 50.2912 43.6987C50.2912 44.045 50.1537 44.3771 49.9088 44.622C49.6639 44.8669 49.3318 45.0044 48.9855 45.0044H30.7045C30.4209 45.004 30.1452 44.9112 29.9191 44.7402C29.6929 44.5691 29.5286 44.3291 29.4509 44.0564C27.7011 37.9349 25.9436 31.816 24.2016 25.6971C23.9144 24.6603 23.4286 24.0466 22.9533 23.7854C22.4702 23.519 21.8721 23.4564 20.8379 23.9735C20.5306 24.1106 20.1821 24.1238 19.8652 24.0102C19.5484 23.8967 19.2876 23.6651 19.1373 23.3639C18.9871 23.0627 18.9589 22.7152 19.0588 22.3937C19.1586 22.0723 19.3787 21.8018 19.6732 21.6387C20.4619 21.2444 21.2688 21.0302 22.0445 21.0041M47.6797 47.616C48.3723 47.616 49.0366 47.8912 49.5263 48.3809C50.0161 48.8707 50.2912 49.535 50.2912 50.2276C50.2912 50.9202 50.0161 51.5845 49.5263 52.0743C49.0366 52.564 48.3723 52.8392 47.6797 52.8392C46.987 52.8392 46.3228 52.564 45.833 52.0743C45.3433 51.5845 45.0681 50.9202 45.0681 50.2276C45.0681 49.535 45.3433 48.8707 45.833 48.3809C46.3228 47.8912 46.987 47.616 47.6797 47.616ZM32.0102 47.616C32.7029 47.616 33.3671 47.8912 33.8569 48.3809C34.3467 48.8707 34.6218 49.535 34.6218 50.2276C34.6218 50.9202 34.3467 51.5845 33.8569 52.0743C33.3671 52.564 32.7029 52.8392 32.0102 52.8392C31.3176 52.8392 30.6533 52.564 30.1636 52.0743C29.6738 51.5845 29.3987 50.9202 29.3987 50.2276C29.3987 49.535 29.6738 48.8707 30.1636 48.3809C30.6533 47.8912 31.3176 47.616 32.0102 47.616Z"
+                            fill="white" />
+                    </svg>
+                </a>
+            </div>
+
+            <div class="feature-group right-group">
+                <div class="bottom-feature-item">
+                    <svg class="feature-icon-svg" width="55" height="55" viewBox="0 0 90 90" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <rect class="icon-accent-stroke" x="0.99" y="0.99" width="87.13" height="87.13" rx="43.56"
+                            stroke="#17B8FF" stroke-width="1.98" />
+                        <path
+                            d="M18.5049 26.525V37.6426C18.5037 40.0359 19.0592 42.3968 20.1275 44.5385C21.1958 46.6802 22.7476 48.5441 24.6602 49.9829C26.5729 51.4217 28.7939 52.3959 31.1479 52.8286C33.5018 53.2612 35.9241 53.1405 38.2233 52.4758C38.8303 53.9932 39.6556 55.3958 40.6585 56.6504L34.0524 63.264C33.7054 63.6114 33.5107 64.0825 33.5111 64.5736C33.5114 65.0646 33.7068 65.5354 34.0543 65.8824C34.4017 66.2293 34.8728 66.4241 35.3638 66.4237C35.8549 66.4234 36.3257 66.228 36.6727 65.8805L43.2751 59.2707C45.7238 61.2287 48.6758 62.4553 51.791 62.8094C54.9063 63.1635 58.0582 62.6306 60.8839 61.2721C63.7096 59.9135 66.0942 57.7846 67.7632 55.1305C69.4321 52.4763 70.3176 49.4047 70.3177 46.2694V34.1674C70.3177 31.6582 68.2822 29.6264 65.7766 29.6264H53.6747C51.5799 29.6264 49.5814 30.0113 47.7384 30.7145C46.4537 28.1556 44.4825 26.0046 42.0453 24.502C39.6081 22.9994 36.8009 22.2045 33.9377 22.2061H22.8238C20.4405 22.2061 18.5049 24.1416 18.5049 26.525ZM45.9101 56.6319L54.9848 47.5536C55.3318 47.2061 55.5265 46.7351 55.5261 46.244C55.5258 45.753 55.3304 45.2822 54.9829 44.9352C54.8109 44.7634 54.6067 44.6272 54.382 44.5343C54.1573 44.4414 53.9165 44.3937 53.6733 44.3938C53.1823 44.3942 52.7115 44.5896 52.3645 44.9371L43.301 54.0117C41.8648 52.0871 40.9923 49.801 40.7809 47.409C40.5695 45.0169 41.0276 42.6132 42.104 40.4666C43.1804 38.32 44.8326 36.5151 46.876 35.2536C48.9193 33.9922 51.2733 33.3239 53.6747 33.3236H65.7803C66.243 33.3236 66.6204 33.7011 66.6204 34.1637V46.2694C66.6206 48.6729 65.9516 51.0291 64.6885 53.074C63.4253 55.1188 61.6177 56.7716 59.4683 57.8473C57.3189 58.923 54.9125 59.379 52.5185 59.1644C50.1245 58.9497 47.8376 58.0728 45.9138 56.6319M33.9414 25.907C36.1247 25.9064 38.2648 26.515 40.121 27.6645C41.9772 28.8139 43.4758 30.4585 44.4483 32.4132C41.8133 34.1661 39.7324 36.6334 38.4491 39.5263L32.7645 33.8491C32.5925 33.6773 32.3882 33.5411 32.1635 33.4482C31.9389 33.3553 31.6981 33.3076 31.4549 33.3078C31.2118 33.3079 30.9711 33.356 30.7465 33.4492C30.5219 33.5424 30.3179 33.6789 30.1461 33.851C29.9743 34.023 29.8381 34.2272 29.7452 34.4519C29.6523 34.6766 29.6046 34.9174 29.6047 35.1606C29.6049 35.4037 29.653 35.6444 29.7462 35.869C29.8394 36.0936 29.9759 36.2976 30.148 36.4694L37.2463 43.5603C36.955 45.3295 36.9512 47.1341 37.2352 48.9044C35.4857 49.4168 33.6409 49.5145 31.8471 49.1896C30.0533 48.8648 28.3598 48.1263 26.9011 47.033C25.4424 45.9396 24.2586 44.5213 23.4436 42.8906C22.6286 41.26 22.2048 39.4618 22.2058 37.6389L22.2021 26.5213C22.2059 26.3583 22.2729 26.2032 22.3889 26.0885C22.5049 25.9739 22.6608 25.9088 22.8238 25.907H33.9414Z"
+                            fill="white" />
+                    </svg>
+                    <div class="feature-text-block">
+                        <span class="feature-label">MICROWAVE</span>
+                        <span class="feature-sublabel">SAFE</span>
+                    </div>
+                </div>
+
+                <div class="nav-separator"></div>
+
+                <div class="bottom-feature-item">
+                    <svg class="feature-icon-svg" width="55" height="55" viewBox="0 0 90 90" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <rect class="icon-accent-stroke" x="0.99" y="0.99" width="87.13" height="87.13" rx="43.56"
+                            stroke="#17B8FF" stroke-width="1.98" />
+                        <path
+                            d="M54.28 23.44H34.54C27.56 23.44 24.07 23.44 21.9 25.61C19.73 27.77 19.73 31.26 19.73 38.24V45.64C19.73 52.62 19.73 56.11 21.9 58.28C24.07 60.45 27.56 60.45 34.54 60.45H54.28C61.25 60.45 64.74 60.45 66.91 58.28C69.08 56.11 69.08 52.62 69.08 45.64V38.24C69.08 31.26 69.08 27.77 66.91 25.61C64.74 23.44 61.25 23.44 54.28 23.44Z"
+                            stroke="white" stroke-width="3.7" stroke-linecap="round" stroke-linejoin="round" />
+                        <path
+                            d="M27.13 60.45V65.38M61.68 60.45V65.38M61.8 33.31H61.68M61.8 43.18H61.68M46.87 30.84H34.54C31.05 30.84 29.3 30.84 28.22 31.92C27.13 33.00 27.13 34.75 27.13 38.24V45.64C27.13 49.13 27.13 50.87 28.22 51.96C29.3 53.04 31.05 53.04 34.54 53.04H46.87C50.36 53.04 52.11 53.04 53.19 51.96C54.27 50.87 54.27 49.13 54.27 45.64V38.24C54.27 34.75 54.27 33.01 53.19 31.92C52.11 30.84 50.36 30.84 46.87 30.84ZM61.92 33.31C61.92 33.34 61.92 33.37 61.9 33.4C61.89 33.43 61.87 33.46 61.85 33.48C61.83 33.51 61.8 33.53 61.77 33.54C61.74 33.55 61.71 33.56 61.68 33.56C61.64 33.56 61.61 33.55 61.58 33.54C61.55 33.53 61.52 33.51 61.5 33.48C61.48 33.46 61.46 33.43 61.45 33.4C61.44 33.37 61.43 33.34 61.43 33.31C61.43 33.24 61.46 33.18 61.5 33.14C61.55 33.09 61.61 33.06 61.68 33.06C61.74 33.06 61.8 33.09 61.85 33.14C61.9 33.18 61.92 33.24 61.92 33.31ZM61.92 43.18C61.92 43.21 61.92 43.24 61.9 43.27C61.89 43.3 61.87 43.33 61.85 43.35C61.83 43.38 61.8 43.39 61.77 43.41C61.74 43.42 61.71 43.43 61.68 43.43C61.64 43.43 61.61 43.42 61.58 43.41C61.55 43.39 61.52 43.38 61.5 43.35C61.48 43.33 61.46 43.3 61.45 43.27C61.44 43.24 61.43 43.21 61.43 43.18C61.43 43.11 61.46 43.05 61.5 43.00C61.55 42.96 61.61 42.93 61.68 42.93C61.74 42.93 61.8 42.96 61.85 43.00C61.9 43.05 61.92 43.11 61.92 43.18Z"
+                            stroke="white" stroke-width="3.7" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                    <div class="feature-text-block">
+                        <span class="feature-label">ECO</span>
+                        <span class="feature-sublabel">FRIENDLY</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Smooth Scroll Container (Lenis) -->
+    <main class="scroll-container">
+
+        <section id="home" class="hero-section">
+            <div class="hero-grid-overlay"></div>
+            <div class="hero-bg-anim">
+                <div class="glow-orb orb-1"></div>
+                <div class="glow-orb orb-2"></div>
+            </div>
+            <div class="hero-floating-elements">
+                <img src="assets/images/product-webp-images/round-container.webp" alt="Round Container"
+                    class="hero-float hero-float-1">
+                <img src="assets/images/product-webp-images/round-square-container.webp" alt="Round Square Container"
+                    class="hero-float hero-float-2">
+                <img src="assets/images/product-webp-images/rectangle-container.webp" alt="Rectangle Container"
+                    class="hero-float hero-float-3">
+                <img src="assets/images/product-webp-images/sweet-box-container.webp" alt="Sweet Box Container"
+                    class="hero-float hero-float-4">
+            </div>
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    <div class="hero-line hero-line1">
+                        <span class="word-our">OUR</span>
+                        <span class="word-product">PRODUCT</span>
+                    </div>
+                    <div class="hero-line hero-line2 hero-flip">
+                        <div class="flip-wrapper">
+                            <div class="flip-item"><span class="word-packaging">PACKAGING</span></div>
+                            <div class="flip-item"><span class="word-packaging">CONTAINERS</span></div>
+                            <div class="flip-item"><span class="word-packaging">INNOVATIONS</span></div>
+                            <div class="flip-item"><span class="word-packaging">SUSTAINABILITY</span></div>
+                        </div>
+                    </div>
+                    <div class="hero-line hero-line3">
+                        <span class="word-solutions">SOLUTIONS</span>
+                    </div>
+                </h1>
+            </div>
+        </section>
+
+        <!-- HORIZONTAL SLIDER SECTION -->
+        <section id="explore" class="slider-section-pinned">
+            <!-- Slide Right Decor Panel (Persistent) -->
+            <div class="slide-right-decor">
+                <h3 class="top-right-title">PREMIUM<br>QUALITY</h3>
+                <p class="top-right-desc">Crafted with precision to ensure your food stays fresh and safe.</p>
+            </div>
+
+            <div class="horizontal-scroll-wrapper">
+                <div class="top-dashed-line"></div>
+                <div class="middle-dashed-line"></div>
+
+                <!-- Slide 1: Round (Product No. 01) -->
+                <div class="slide-panel panel-round" data-theme="round" data-prod-num="01">
+                    <div class="backdrop-circle circle-blue"></div>
+                    <div class="bg-watermark-text">CONTAINER</div>
+                    <div class="slide-content-grid">
+                        <div class="slide-info-panel">
+                            <div class="product-number-pill">PRODUCT NO. 01</div>
+                            <h2 class="slide-title">ROUND</h2>
+                        </div>
+                        <div class="slide-visual-panel">
+                            <div class="product-showcase">
+                                <img src="assets/images/product-webp-images/round-container.webp" alt="Round Container"
+                                    class="main-product-img">
+
+                                <!-- Floating Mascot (Strawberry) -->
+                                <div class="char-wrapper strawberry-char" data-character="strawberry">
+                                    <img src="assets/images/ingredients-webp-images/strawberry.webp" alt="Strawberry"
+                                        class="char-base-img">
+                                    <svg class="char-face-svg" viewBox="0 0 100 100"></svg>
+                                    <div class="char-bubble">So Shy!</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 2: Round Square (Product No. 02) -->
+                <div class="slide-panel panel-roundsquare" data-theme="round-square" data-prod-num="02">
+                    <div class="backdrop-circle circle-teal"></div>
+                    <div class="bg-watermark-text">CONTAINER</div>
+                    <div class="slide-content-grid">
+                        <div class="slide-info-panel">
+                            <div class="product-number-pill">PRODUCT NO. 02</div>
+                            <h2 class="slide-title">ROUND SQUARE</h2>
+                        </div>
+                        <div class="slide-visual-panel">
+                            <div class="product-showcase">
+                                <img src="assets/images/product-webp-images/round-square-container.webp"
+                                    alt="Round Square Container" class="main-product-img">
+
+                                <!-- Floating Mascot (Chilli) -->
+                                <div class="char-wrapper green-chilli-char" data-character="green-chilli">
+                                    <img src="assets/images/ingredients-webp-images/green-chilli.webp"
+                                        alt="Green Chilli" class="char-base-img">
+                                    <svg class="char-face-svg" viewBox="0 0 100 100"></svg>
+                                    <div class="char-bubble">Spicy!</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 3: Rectangle (Product No. 03) -->
+                <div class="slide-panel panel-rectangle" data-theme="rectangle" data-prod-num="03">
+                    <div class="backdrop-circle circle-deeppurple"></div>
+                    <div class="bg-watermark-text">CONTAINER</div>
+                    <div class="slide-content-grid">
+                        <div class="slide-info-panel">
+                            <div class="product-number-pill">PRODUCT NO. 03</div>
+                            <h2 class="slide-title">RECTANGLE</h2>
+                        </div>
+                        <div class="slide-visual-panel">
+                            <div class="product-showcase">
+                                <img src="assets/images/product-webp-images/rectangle-container.webp"
+                                    alt="Rectangle Container" class="main-product-img">
+
+                                <!-- Floating Mascot (Leg Piece) -->
+                                <div class="char-wrapper leg-piece-char" data-character="leg-piece">
+                                    <img src="assets/images/ingredients-webp-images/leg-piece.webp" alt="Leg Piece"
+                                        class="char-base-img">
+                                    <svg class="char-face-svg" viewBox="0 0 100 100"></svg>
+                                    <div class="char-bubble">Crunchy!</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 4: Sweet Box (Product No. 04) -->
+                <div class="slide-panel panel-sweetbox" data-theme="sweet-box" data-prod-num="04">
+                    <div class="backdrop-circle circle-orange"></div>
+                    <div class="bg-watermark-text">CONTAINER</div>
+                    <div class="slide-content-grid">
+                        <div class="slide-info-panel">
+                            <div class="product-number-pill">PRODUCT NO. 04</div>
+                            <h2 class="slide-title">SWEET BOX</h2>
+                        </div>
+                        <div class="slide-visual-panel">
+                            <div class="product-showcase">
+                                <img src="assets/images/product-webp-images/sweet-box-container.webp"
+                                    alt="Sweet Box Container" class="main-product-img">
+
+                                <!-- Floating Mascot (Laddoo) -->
+                                <div class="char-wrapper laddoo-char" data-character="laddoo">
+                                    <img src="assets/images/ingredients-webp-images/laddoo.webp" alt="Laddoo"
+                                        class="char-base-img">
+                                    <svg class="char-face-svg" viewBox="0 0 100 100"></svg>
+                                    <div class="char-bubble">Sweet!</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 5: Oval (Product No. 05) -->
+                <div class="slide-panel panel-oval" data-theme="oval" data-prod-num="05">
+                    <div class="backdrop-circle circle-pink"></div>
+                    <div class="bg-watermark-text">CONTAINER</div>
+                    <div class="slide-content-grid">
+                        <div class="slide-info-panel">
+                            <div class="product-number-pill">PRODUCT NO. 05</div>
+                            <h2 class="slide-title">OVAL</h2>
+                        </div>
+                        <div class="slide-visual-panel">
+                            <div class="product-showcase">
+                                <img src="assets/images/product-webp-images/oval-container.webp" alt="Oval Container"
+                                    class="main-product-img">
+
+                                <!-- Floating Mascot (Thean Mittai) -->
+                                <div class="char-wrapper thean-mittai-char" data-character="thean-mittai">
+                                    <img src="assets/images/ingredients-webp-images/thean-mittai.webp"
+                                        alt="Thean Mittai" class="char-base-img">
+                                    <svg class="char-face-svg" viewBox="0 0 100 100"></svg>
+                                    <div class="char-bubble">Delicious!</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 6: Tamper Evident (Product No. 06) -->
+                <div class="slide-panel panel-tamper" data-theme="tamper-evident" data-prod-num="06">
+                    <div class="backdrop-circle circle-purple"></div>
+                    <div class="bg-watermark-text">CONTAINER</div>
+                    <div class="slide-content-grid">
+                        <div class="slide-info-panel">
+                            <div class="product-number-pill">PRODUCT NO. 06</div>
+                            <h2 class="slide-title">TAMPER EVIDENT</h2>
+                        </div>
+                        <div class="slide-visual-panel">
+                            <div class="product-showcase">
+                                <img src="assets/images/product-webp-images/tamper-evident-container.webp"
+                                    alt="Tamper Evident Container" class="main-product-img">
+
+                                <img src="assets/images/ingredients-webp-images/tamper-evident-pink-sweet.webp"
+                                    alt="sweet pink colour" class="sweet-pink">
+                                <!-- Floating Mascot (Sweet) -->
+                                <div class="char-wrapper sweet-char" data-character="sweet">
+                                    <img src="assets/images/ingredients-webp-images/sweet.webp" alt="Sweet"
+                                        class="char-base-img">
+                                    <svg class="char-face-svg" viewBox="0 0 100 100"></svg>
+                                    <div class="char-bubble">So Sweet!</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 7: Ice Cream (Product No. 07) -->
+                <div class="slide-panel panel-icecream" data-theme="ice-cream" data-prod-num="07">
+                    <div class="backdrop-circle circle-green"></div>
+                    <div class="bg-watermark-text">CONTAINER</div>
+                    <div class="slide-content-grid">
+                        <div class="slide-info-panel">
+                            <div class="product-number-pill">PRODUCT NO. 07</div>
+                            <h2 class="slide-title">ICE CREAM</h2>
+                        </div>
+                        <div class="slide-visual-panel">
+                            <div class="product-showcase">
+                                <img src="assets/images/product-webp-images/ice-cream-container.webp"
+                                    alt="Ice Cream Container" class="main-product-img">
+
+                                <!-- Floating Mascot (Ice Cream) -->
+                                <div class="char-wrapper ice-cream-char" data-character="ice-cream">
+                                    <img src="assets/images/ingredients-webp-images/ice-cream.webp" alt="Ice Cream"
+                                        class="char-base-img">
+                                    <svg class="char-face-svg" viewBox="0 0 100 100"></svg>
+                                    <div class="char-bubble">So Cold!</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+        <!-- WHY CHOOSE US SECTION -->
+        <section id="why-choose-us" class="why-choose-section">
+            <div class="why-choose-header">
+                <h2 class="why-title">WHY CHOOSE US?</h2>
+                <p class="why-subtitle">Premium packaging solutions engineered for excellence.</p>
+            </div>
+            <div class="why-grid">
+                <div class="why-item">
+                    <img src="assets/images/why-choose-us/food-grade-material.webp" alt="Food Grade Material">
+                    <span>Food Grade Material</span>
+                </div>
+                <div class="why-item">
+                    <img src="assets/images/why-choose-us/leak-resistant-design.webp" alt="Leak Resistant Design">
+                    <span>Leak Resistant Design</span>
+                </div>
+                <div class="why-item">
+                    <img src="assets/images/why-choose-us/microwave-and-freezer-safe.webp"
+                        alt="Microwave & Freezer Safe">
+                    <span>Microwave & Freezer Safe</span>
+                </div>
+                <div class="why-item">
+                    <img src="assets/images/why-choose-us/bulk-manufacturing.webp" alt="Bulk Manufacturing">
+                    <span>Bulk Manufacturing</span>
+                </div>
+                <div class="why-item">
+                    <img src="assets/images/why-choose-us/custom-branding.webp" alt="Custom Branding">
+                    <span>Custom Branding</span>
+                </div>
+                <div class="why-item">
+                    <img src="assets/images/why-choose-us/fast-nationwide-delivery.webp" alt="Fast Nationwide Delivery">
+                    <span>Fast Nationwide Delivery</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- STATEMENT REVEAL SECTION -->
+        <section id="statement" class="statement-section">
+            <div class="statement-container">
+                <h2 class="statement-text">
+                    <div class="statement-line">
+                        <span class="text-white">QUALITY</span> <span class="inline-img-wrapper"><img
+                                src="./assets/images/tagline-section/line-1-image.webp" alt="Factory"></span> <span
+                            class="text-blue">IS OUR VALUE.</span>
+                    </div>
+                    <div class="statement-line">
+                        <span class="text-white">DELIVERING</span> <span class="inline-img-wrapper"><img
+                                src="./assets/images/tagline-section/line-2-image.webp" alt="Machine"></span> <span
+                            class="text-white">PIXEL PERFECT</span>
+                    </div>
+                    <div class="statement-line">
+                        <span class="text-blue">CONTAINERS</span> <span class="inline-img-wrapper"><img
+                                src="./assets/images/tagline-section/line-3-image.webp" alt="Containers"></span> <span
+                            class="text-white">TO OUR</span>
+                    </div>
+                    <div class="statement-line">
+                        <span class="text-white">CLIENTS</span> <span class="inline-img-wrapper"><img
+                                src="./assets/images/tagline-section/line-4-image.webp" alt="Truck"></span> <span
+                            class="text-blue">IS OUR GOAL.</span>
+                    </div>
+                    <div class="statement-line">
+                        <span class="text-blue">INNOVATIVE</span> <span class="inline-img-wrapper"><img
+                                src="./assets/images/product-webp-images/round-container.webp" alt="Container"></span>
+                        <span class="text-white">DESIGNS</span>
+                    </div>
+                    <div class="statement-line">
+                        <span class="text-white">FOR YOUR</span> <span class="inline-img-wrapper"><img
+                                src="./assets/images/product-webp-images/sweet-box-container.webp"
+                                alt="Sweet Box"></span> <span class="text-blue">BUSINESS.</span>
+                    </div>
+                </h2>
+            </div>
+        </section>
+        <!-- ABOUT US SECTION -->
+        <section id="about" class="about-section">
+            <!-- Left Content (50%) -->
+            <div class="about-content">
+                <h4 class="about-tagline">ABOUT US</h4>
+                <h2 class="about-title">Pioneering Premium<br>Packaging Solutions</h2>
+                <p class="about-description">
+                    We believe that the quality of your food deserves equally exceptional packaging.
+                    With years of expertise in manufacturing visually stunning food containers, we ensure your
+                    culinary creations are delivered beautifully presented.
+                </p>
+                <div class="about-features">
+                    <div class="feature-item">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#FFAD0A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path><polyline points="9 12 11 14 15 10"></polyline></svg>
+                        <span>100% Food Safe</span>
+                    </div>
+                    <div class="feature-item">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#FFAD0A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                        <span>Premium Quality</span>
+                    </div>
+                    <div class="feature-item">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#FFAD0A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"></path></svg>
+                        <span>Leak-Proof Design</span>
+                    </div>
+                    <div class="feature-item">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#FFAD0A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"></path><path d="M2 14l1.48-1.48C3.84 12.18 4 11.59 4 11a7 7 0 0 1 7-7"></path></svg>
+                        <span>Eco-Friendly</span>
+                    </div>
+                </div>
+                <a href="#explore" class="about-btn">Explore Collection</a>
+            </div>
+
+            <!-- Right Video (50%) -->
+            <div class="about-video-wrapper">
+                <video src="./assets/videos/about-us-video.mp4" autoplay muted loop playsinline
+                    class="about-video"></video>
+            </div>
+        </section>
+
+        <!-- PREMIUM PRODUCTS SHOWCASE (EXPANDING ACCORDION) -->
+        <section id="premium-products" class="premium-products-section">
+            <!-- Floating Background Elements -->
+            <img src="assets/images/ingredients-webp-images/strawberry.webp" class="pp-bg-element pp-float-1"
+                alt="Decor">
+            <img src="assets/images/ingredients-webp-images/laddoo.webp" class="pp-bg-element pp-float-2" alt="Decor">
+            <img src="assets/images/ingredients-webp-images/ice-cream.webp" class="pp-bg-element pp-float-3"
+                alt="Decor">
+            <img src="assets/images/ingredients-webp-images/green-chilli.webp" class="pp-bg-element pp-float-4"
+                alt="Decor">
+
+            <div class="pp-header">
+                <h2 class="pp-title">OUR PREMIUM RANGE</h2>
+                <p class="pp-subtitle">Precision engineered. Aesthetically unmatched.</p>
+            </div>
+
+            <div class="pp-accordion">
+                <!-- 1 -->
+                <div class="pp-panel">
+                    <div class="pp-bg bg-blue"></div>
+                    <img src="assets/images/our-products/round-containers.webp" alt="Round" class="pp-img">
+                    <h3 class="pp-vertical-text">ROUND</h3>
+                    <div class="pp-content">
+                        <h4>ROUND SERIES</h4>
+                        <p>Perfect for curries, gravies, and liquid-rich dishes.</p>
+                        <span class="pp-btn">EXPLORE</span>
+                    </div>
+                </div>
+                <!-- 2 -->
+                <div class="pp-panel">
+                    <div class="pp-bg bg-orange"></div>
+                    <img src="assets/images/our-products/round-square-containers.webp" alt="Round Square"
+                        class="pp-img">
+                    <h3 class="pp-vertical-text">ROUND SQUARE</h3>
+                    <div class="pp-content">
+                        <h4>ROUND SQUARE</h4>
+                        <p>A modern fusion offering maximum space efficiency.</p>
+                        <span class="pp-btn">EXPLORE</span>
+                    </div>
+                </div>
+                <!-- 3 -->
+                <div class="pp-panel">
+                    <div class="pp-bg bg-teal"></div>
+                    <img src="assets/images/our-products/rectangular-containers.webp" alt="Rectangular" class="pp-img">
+                    <h3 class="pp-vertical-text">RECTANGLE</h3>
+                    <div class="pp-content">
+                        <h4>RECTANGLE SERIES</h4>
+                        <p>Ideal for biryanis, noodles, and structured meals.</p>
+                        <span class="pp-btn">EXPLORE</span>
+                    </div>
+                </div>
+
+                <!-- 4 -->
+                <div class="pp-panel">
+                    <div class="pp-bg bg-purple"></div>
+                    <img src="assets/images/our-products/sweetbox-containers.webp" alt="Sweet Box" class="pp-img">
+                    <h3 class="pp-vertical-text">SWEET BOX</h3>
+                    <div class="pp-content">
+                        <h4>SWEET BOXES</h4>
+                        <p>Elegantly crafted for premium confectioneries.</p>
+                        <span class="pp-btn">EXPLORE</span>
+                    </div>
+                </div>
+                <!-- 5 -->
+                <div class="pp-panel">
+                    <div class="pp-bg bg-pink"></div>
+                    <img src="assets/images/our-products/oval-containers.webp" alt="Oval" class="pp-img">
+                    <h3 class="pp-vertical-text">OVAL</h3>
+                    <div class="pp-content">
+                        <h4>OVAL SERIES</h4>
+                        <p>Unique shapes that stand out on any shelf.</p>
+                        <span class="pp-btn">EXPLORE</span>
+                    </div>
+                </div>
+                <!-- 6 -->
+                <div class="pp-panel">
+                    <div class="pp-bg bg-red"></div>
+                    <img src="assets/images/our-products/tamper-evident-containers.webp" alt="Tamper Evident"
+                        class="pp-img">
+                    <h3 class="pp-vertical-text">TAMPER EVIDENT</h3>
+                    <div class="pp-content">
+                        <h4>TAMPER EVIDENT</h4>
+                        <p>Maximum security for delivery and retail peace of mind.</p>
+                        <span class="pp-btn">EXPLORE</span>
+                    </div>
+                </div>
+                <!-- 7 -->
+                <div class="pp-panel">
+                    <div class="pp-bg bg-green"></div>
+                    <img src="assets/images/our-products/icecream-containers.webp" alt="Ice Cream" class="pp-img">
+                    <h3 class="pp-vertical-text">ICE CREAM</h3>
+                    <div class="pp-content">
+                        <h4>ICE CREAM</h4>
+                        <p>Temperature resilient and deeply attractive.</p>
+                        <span class="pp-btn">EXPLORE</span>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+        <!-- INDUSTRIES WE SERVE SECTION -->
+        <section id="industries" class="industries-section">
+            <div class="industries-header">
+                <h2 class="industries-title">INDUSTRIES WE <span class="text-orange">SERVE</span></h2>
+                <div class="title-underline"></div>
+            </div>
+            <div class="industries-grid">
+                <div class="industry-block">
+                    <img src="assets/images/industries-we-serve/new/restaurant.webp" alt="Restaurants" class="industry-img">
+                    <div class="industry-overlay">
+                        <div class="industry-icon-wrapper">
+                            <img src="assets/images/industries-we-serve/new/icons/restarurants.svg" alt="Restaurants Icon">
+                        </div>
+                        <span class="industry-name">RESTAURANTS</span>
+                    </div>
+                </div>
+                <div class="industry-block">
+                    <img src="assets/images/industries-we-serve/new/hotels.webp" alt="Hotels" class="industry-img">
+                    <div class="industry-overlay">
+                        <div class="industry-icon-wrapper">
+                            <img src="assets/images/industries-we-serve/new/icons/hotels.svg" alt="Hotels Icon">
+                        </div>
+                        <span class="industry-name">HOTELS</span>
+                    </div>
+                </div>
+                <div class="industry-block">
+                    <img src="assets/images/industries-we-serve/new/cafes.webp" alt="Cafes" class="industry-img">
+                    <div class="industry-overlay">
+                        <div class="industry-icon-wrapper">
+                            <img src="assets/images/industries-we-serve/new/icons/cafes.svg" alt="Cafes Icon">
+                        </div>
+                        <span class="industry-name">CAFES</span>
+                    </div>
+                </div>
+                <div class="industry-block">
+                    <img src="assets/images/industries-we-serve/new/bakeries.webp" alt="Bakeries" class="industry-img">
+                    <div class="industry-overlay">
+                        <div class="industry-icon-wrapper">
+                            <img src="assets/images/industries-we-serve/new/icons/bakeries.svg" alt="Bakeries Icon">
+                        </div>
+                        <span class="industry-name">BAKERIES</span>
+                    </div>
+                </div>
+                <div class="industry-block">
+                    <img src="assets/images/industries-we-serve/new/supermarkets.webp" alt="Supermarkets" class="industry-img">
+                    <div class="industry-overlay">
+                        <div class="industry-icon-wrapper">
+                            <img src="assets/images/industries-we-serve/new/icons/supermarkets.svg" alt="Supermarkets Icon">
+                        </div>
+                        <span class="industry-name">SUPERMARKETS</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA BANNER SECTION -->
+        <section class="cta-banner-section">
+            <div class="cta-banner-container">
+                <div class="cta-banner-visuals">
+                    <img src="assets/images/banner/banner-circle.svg" alt="Blue Circle Decor" class="cta-circle-img">
+                    <img src="assets/images/product-webp-images/round-container.webp" alt="Round Container"
+                        class="cta-img cta-img-1">
+                    <img src="assets/images/product-webp-images/round-square-container.webp"
+                        alt="Round Square Container" class="cta-img cta-img-2">
+                    <img src="assets/images/product-webp-images/rectangle-container.webp" alt="Rectangle Container"
+                        class="cta-img cta-img-3">
+                </div>
+                <div class="cta-banner-text-wrapper">
+                    <div class="cta-separator"></div>
+                    <div class="cta-text-content">
+                        <h3 class="cta-cursive">Looking for</h3>
+                        <h2 class="cta-title">CUSTOM<br><span class="text-blue">PACKAGING?</span></h2>
+                        <div class="cta-line"></div>
+                        <p class="cta-desc">We manufacture premium food containers<br>tailored to your business.</p>
+                    </div>
+                    <a href="#contact" class="cta-btn magnetic-btn">
+                        <span class="btn-icon">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#000"
+                                stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                                <polyline points="12 5 19 12 12 19"></polyline>
+                            </svg>
+                        </span>
+                        GET A QUOTE
+                    </a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- PREMIUM FOOTER SECTION -->
+    <footer class="premium-footer" id="footer">
+        <div class="footer-container">
+            <div class="footer-grid">
+                <!-- Brand Column -->
+                <div class="footer-brand">
+                    <img src="assets/images/fisto-logo.svg" alt="Fisto Tech Pvt Ltd" class="footer-logo">
+                    <p class="footer-desc">Premium, leak-proof, and eco-friendly food packaging solutions.</p>
+                </div>
+
+                <!-- Quick Links Column -->
+                <div class="footer-links">
+                    <h4 class="footer-title">Quick Links</h4>
+                    <ul>
+                        <li><a href="#hero">Home</a></li>
+                        <li><a href="#premium-products">Products</a></li>
+                        <li><a href="#industries">Industries</a></li>
+                        <li><a href="#about">About Us</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Column -->
+                <div class="footer-contact">
+                    <h4 class="footer-title">Contact</h4>
+                    <p><a href="mailto:info@fist-o.com">info@fist-o.com</a></p>
+                    <p><a href="tel:+919994425147">+91 9994425147</a></p>
+                </div>
+
+                <!-- Social Column -->
+                <div class="footer-socials">
+                    <h4 class="footer-title">Follow Us</h4>
+                    <div class="social-icons">
+                        <a href="#" aria-label="LinkedIn">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                        </a>
+                        <a href="#" aria-label="Instagram">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                        </a>
+                        <a href="#" aria-label="Facebook">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+                        </a>
+                        <a href="#" aria-label="YouTube">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer Bottom -->
+            <div class="footer-bottom">
+                <p>&copy; 2026 Fisto Tech Pvt Ltd. All rights reserved.</p>
+                <div class="footer-legal">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- GSAP & ScrollTrigger & Lenis Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.27/bundled/lenis.min.js"></script>
+    <!-- Custom Scripts -->
+    <script src="index.js?v=2"></script>
+</body>
+
+</html>

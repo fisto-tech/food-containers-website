@@ -349,6 +349,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         gsap.to('.icon-accent-stroke', { stroke: newAccent, duration: 0.8, ease: 'power2.inOut' });
         gsap.to('.shop-now-btn', { backgroundColor: newAccent, duration: 0.8, ease: 'power2.inOut' });
+        document.documentElement.style.setProperty('--active-accent', newAccent);
 
         // Slide the wrapper
         gsap.to(wrapper, {

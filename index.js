@@ -72,8 +72,31 @@ document.addEventListener('DOMContentLoaded', () => {
     const cursor = document.querySelector('.custom-cursor');
     const cursorDot = document.querySelector('.cursor-dot');
     const cursorText = document.querySelector('.cursor-text');
+    const trailImages = document.querySelectorAll('.trail-img');
+    const rotations = [15, -20, 10, -5];
+
+    // Position history for custom trail spacing
+    const mouse = { x: window.innerWidth / 2, y: window.innerHeight / 2 };
+    const history = [];
+    const step = 6; // frame spacing between each trail image to ensure a physical gap
+    const maxHistory = trailImages.length * step;
+
+    // Set initial state for trail images
+    gsap.set(trailImages, {
+        xPercent: -50,
+        yPercent: -50,
+        scale: 0,
+        opacity: 0,
+        rotation: (i) => rotations[i]
+    });
+
+    let mouseActive = false;
+    let timeoutId;
 
     window.addEventListener('mousemove', (e) => {
+        mouse.x = e.clientX;
+        mouse.y = e.clientY;
+
         gsap.to(cursor, {
             x: e.clientX,
             y: e.clientY,
@@ -85,6 +108,59 @@ document.addEventListener('DOMContentLoaded', () => {
             y: e.clientY,
             duration: 0.1,
             ease: 'power2.out'
+        });
+
+        // Show trail images when mouse is active and moving
+        if (!mouseActive) {
+            mouseActive = true;
+            gsap.to(trailImages, {
+                scale: 1,
+                opacity: 0.85,
+                duration: 0.3,
+                stagger: 0.05
+            });
+        }
+
+        // Hide trail images if mouse stays still for more than 1.2s
+        clearTimeout(timeoutId);
+        timeoutId = setTimeout(() => {
+            mouseActive = false;
+            gsap.to(trailImages, {
+                scale: 0,
+                opacity: 0,
+                duration: 0.4,
+                stagger: 0.03
+            });
+        }, 1200);
+    });
+
+    // Update positions on every frame to create physical spacing gaps
+    gsap.ticker.add(() => {
+        history.unshift({ x: mouse.x, y: mouse.y });
+        if (history.length > maxHistory) {
+            history.pop();
+        }
+
+        trailImages.forEach((img, index) => {
+            const historyIndex = index * step;
+            const targetPos = history[historyIndex] || history[history.length - 1] || mouse;
+
+            gsap.to(img, {
+                x: targetPos.x,
+                y: targetPos.y,
+                duration: 0.15,
+                ease: 'power1.out',
+                overwrite: 'auto'
+            });
+        });
+    });
+
+    document.addEventListener('mouseleave', () => {
+        mouseActive = false;
+        gsap.to(trailImages, {
+            scale: 0,
+            opacity: 0,
+            duration: 0.3
         });
     });
 
@@ -153,42 +229,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Slider Cursor Trail Effect
-    let lastTrailTime = 0;
-    const sliderSection = document.querySelector('.slider-section-pinned');
-
-    if (sliderSection) {
-        sliderSection.addEventListener('mousemove', (e) => {
-            const now = Date.now();
-            if (now - lastTrailTime < 150) return; // limit spawn rate (reduced frequency)
-            lastTrailTime = now;
-
-            // Only spawn if slider is active/visible
-            if (!sliderSection.classList.contains('active') && window.scrollY < window.innerHeight / 2) return;
-
-            const currentTheme = panels[currentIndex] ? panels[currentIndex].getAttribute('data-theme') : 'round';
-            let imgSrc = 'strawberry.webp'; // Default round
-
-            if (currentTheme === 'round-square') imgSrc = 'green-chilli.webp';
-            else if (currentTheme === 'rectangle') imgSrc = 'leg-piece.webp';
-            else if (currentTheme === 'sweet-box') imgSrc = 'laddoo.webp';
-            else if (currentTheme === 'oval') imgSrc = 'thean-mittai.webp';
-            else if (currentTheme === 'tamper-evident') imgSrc = 'sweet.webp';
-            else if (currentTheme === 'ice-cream') imgSrc = 'ice-cream.webp';
-
-            const trail = document.createElement("img");
-            trail.classList.add("cursor-trail-item");
-            trail.src = `assets/images/ingredients-webp-images/${imgSrc}`;
-            trail.style.left = e.clientX + "px";
-            trail.style.top = e.clientY + "px";
-
-            document.body.appendChild(trail);
-
-            setTimeout(() => {
-                trail.remove();
-            }, 1500);
-        });
-    }
 
     // -----------------------------------------------------------------
     // 3. GSAP HORIZONTAL SCROLL & HERO PARALLAX
@@ -298,7 +338,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const currentPanel = panels[currentIndex];
         const theme = currentPanel.getAttribute('data-theme');
-        let newAccent = '#17B8FF';
+        let newAccent = '#8B5CF6';
         if (theme === 'tamper-evident') newAccent = 'var(--tamper-accent)';
         if (theme === 'ice-cream') newAccent = 'var(--icecream-accent)';
         if (theme === 'sweet-box') newAccent = 'var(--sweetbox-accent)';
@@ -1010,6 +1050,140 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // -----------------------------------------------------------------
+    // 9.5 STATEMENT SECTION FULLSCREEN IMAGE LIGHTBOX
+    // -----------------------------------------------------------------
+    const lightboxModal = document.getElementById('image-lightbox');
+    if (lightboxModal && statementSection) {
+        const lightboxImg = document.getElementById('lightbox-img');
+        const lightboxCaption = document.getElementById('lightbox-caption');
+        const closeBtn = lightboxModal.querySelector('.lightbox-close');
+        const statementImages = statementSection.querySelectorAll('.inline-img-wrapper img');
+
+        // Hover effect for the close button with custom cursor
+        closeBtn.addEventListener('mouseenter', () => {
+            cursor.classList.add('active');
+            cursorText.textContent = "CLOSE";
+            gsap.to(cursor, {
+                borderColor: '#8B5CF6',
+                backgroundColor: 'rgba(139, 92, 246, 0.1)',
+                scale: 1.1
+            });
+            gsap.to(cursorDot, {
+                backgroundColor: '#8B5CF6',
+                scale: 1.5
+            });
+        });
+
+        closeBtn.addEventListener('mouseleave', () => {
+            cursor.classList.remove('active');
+            gsap.to(cursor, {
+                borderColor: 'rgba(255,255,255,0.2)',
+                backgroundColor: 'rgba(255,255,255,0.03)',
+                scale: 1
+            });
+            gsap.to(cursorDot, {
+                backgroundColor: '#ffffff',
+                scale: 1
+            });
+        });
+
+        // Hover effect for the images themselves to show "VIEW" on cursor
+        statementImages.forEach(img => {
+            const wrapper = img.closest('.inline-img-wrapper');
+            wrapper.addEventListener('mouseenter', () => {
+                cursor.classList.add('active');
+                cursorText.textContent = "VIEW";
+                gsap.to(cursor, {
+                    borderColor: '#8B5CF6',
+                    backgroundColor: 'rgba(139, 92, 246, 0.1)',
+                    scale: 1.1
+                });
+                gsap.to(cursorDot, {
+                    backgroundColor: '#8B5CF6',
+                    scale: 1.5
+                });
+            });
+
+            wrapper.addEventListener('mouseleave', () => {
+                cursor.classList.remove('active');
+                gsap.to(cursor, {
+                    borderColor: 'rgba(255,255,255,0.2)',
+                    backgroundColor: 'rgba(255,255,255,0.03)',
+                    scale: 1
+                });
+                gsap.to(cursorDot, {
+                    backgroundColor: '#ffffff',
+                    scale: 1
+                });
+            });
+
+            wrapper.addEventListener('click', (e) => {
+                e.stopPropagation();
+                
+                // Pause Lenis smooth scrolling
+                if (typeof lenis !== 'undefined') lenis.stop();
+
+                // Set image content and caption
+                lightboxImg.src = img.src;
+                lightboxCaption.textContent = img.alt || 'Fisto Premium Containers';
+
+                // Show modal
+                lightboxModal.classList.add('active');
+
+                // Animate background fade-in and scale-in of the image using GSAP
+                gsap.killTweensOf([lightboxModal, '.lightbox-img-container']);
+                gsap.fromTo(lightboxModal, 
+                    { opacity: 0 }, 
+                    { opacity: 1, duration: 0.4, ease: 'power2.out' }
+                );
+                gsap.fromTo('.lightbox-img-container', 
+                    { scale: 0.8, opacity: 0 }, 
+                    { scale: 1, opacity: 1, duration: 0.6, ease: 'back.out(1.2)', delay: 0.1 }
+                );
+            });
+        });
+
+        const closeLightbox = () => {
+            // Fade out modal and scale down content
+            gsap.to('.lightbox-img-container', {
+                scale: 0.8,
+                opacity: 0,
+                duration: 0.4,
+                ease: 'power2.in',
+                onComplete: () => {
+                    lightboxModal.classList.remove('active');
+                    lightboxImg.src = '';
+                    lightboxCaption.textContent = '';
+                    
+                    // Resume Lenis smooth scrolling
+                    if (typeof lenis !== 'undefined') lenis.start();
+                }
+            });
+            gsap.to(lightboxModal, { opacity: 0, duration: 0.4, ease: 'power2.in', delay: 0.1 });
+        };
+
+        // Close on close button click
+        closeBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            closeLightbox();
+        });
+
+        // Close on clicking outside the image (clicking on the background)
+        lightboxModal.addEventListener('click', (e) => {
+            if (e.target === lightboxModal || e.target.classList.contains('lightbox-img-container')) {
+                closeLightbox();
+            }
+        });
+
+        // Close on Escape key press
+        window.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && lightboxModal.classList.contains('active')) {
+                closeLightbox();
+            }
+        });
+    }
+
+    // -----------------------------------------------------------------
     // 10. ABOUT US SECTION ANIMATIONS (handled in section 18 below)
     // -----------------------------------------------------------------
 
@@ -1386,13 +1560,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Footer Section
     if (document.querySelector('.premium-footer')) {
-        gsap.from('.premium-footer .footer-brand > *, .premium-footer .footer-links, .premium-footer .footer-contact, .premium-footer .footer-socials', {
+        gsap.from('.premium-footer .footer-minimal-top > *', {
             scrollTrigger: { trigger: '.premium-footer', start: 'top 90%' },
-            y: 40, opacity: 0, duration: 1.5, stagger: 0.2, ease: 'power3.out'
+            y: 30, opacity: 0, duration: 1.2, stagger: 0.15, ease: 'power3.out'
         });
         gsap.from('.footer-bottom', {
             scrollTrigger: { trigger: '.premium-footer', start: 'top 90%' },
-            opacity: 0, duration: 1.5, delay: 0.8, ease: 'power3.out'
+            opacity: 0, duration: 1.2, delay: 0.6, ease: 'power3.out'
         });
     }
 

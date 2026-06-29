@@ -581,27 +581,23 @@ body {
 }
 
 .flip-item:nth-child(1) .word-packaging {
-    color: #dfb226;
-    /* --glow-color: rgba(223, 178, 38, 0.2); */
-    /* --glow-active: rgba(223, 178, 38, 0.6); */
+    color: #ff6b6b; /* Vibrant Professional Coral Red */
+    text-shadow: 0 0 25px rgba(255, 107, 107, 0.4);
 }
 
 .flip-item:nth-child(2) .word-packaging {
-    color: #c94119;
-    /* --glow-color: rgba(23, 184, 255, 0.2); */
-    /* --glow-active: rgba(23, 184, 255, 0.6); */
+    color: #ff9f43; /* Rich Amber Orange */
+    text-shadow: 0 0 25px rgba(255, 159, 67, 0.4);
 }
 
 .flip-item:nth-child(3) .word-packaging {
-    color: #00703c;
-    /* --glow-color: rgba(139, 92, 246, 0.2); */
-    /* --glow-active: rgba(139, 92, 246, 0.6); */
+    color: #10ac84; /* Deep Mint Green */
+    text-shadow: 0 0 25px rgba(78, 102, 96, 0.4);
 }
 
 .flip-item:nth-child(4) .word-packaging {
-    color: #df2626;
-    /* --glow-color: rgba(223, 178, 38, 0.2); */
-    /* --glow-active: rgba(223, 178, 38, 0.6); */
+    color: #00d2d3; /* Sleek Cyan / Teal Blue */
+    text-shadow: 0 0 25px rgba(0, 210, 211, 0.4);
 }
 
 .hero-line3 {
@@ -2181,8 +2177,8 @@ body {
     display: inline-block;
 }
 
-.why-title .accent-outline {
-    color: #8b5cf6;
+.why-title .why-accent-outline {
+    color: #4f642f;
     -webkit-text-stroke: 0px;
     -webkit-text-fill-color: initial;
     background: none;

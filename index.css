@@ -2276,19 +2276,7 @@ body {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    opacity: 0.12; /* Subtle watermark opacity */
-    z-index: 1;
-    pointer-events: none;
-}
-
-.statement-section::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: radial-gradient(circle, rgba(245, 246, 250, 0.2) 0%, rgba(245, 246, 250, 0.8) 70%, #f5f6fa 100%);
+    opacity: 0.25; /* Low opacity background image */
     z-index: 1;
     pointer-events: none;
 }

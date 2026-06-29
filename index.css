@@ -2328,6 +2328,11 @@ body {
     text-shadow: 0 0 30px rgba(0, 160, 230, 0.2);
 }
 
+.text-green {
+    color: #3f6833;
+    text-shadow: 0 0 30px rgba(63, 104, 51, 0.2);
+}
+
 .text-blue:nth-child(2) {
     margin-left: 15px;
 }
@@ -2479,7 +2484,7 @@ body {
 }
 
 .about-title .accent-outline {
-    color: #a78bfa;
+    color: #ff8a00;
     -webkit-text-stroke: 0px;
     -webkit-text-fill-color: initial;
     background: none;
@@ -2512,7 +2517,26 @@ body {
 
 .feature-item svg {
     flex-shrink: 0;
-    filter: drop-shadow(0 2px 5px rgba(139, 92, 246, 0.3));
+}
+
+.feature-item:nth-child(1) svg {
+    stroke: rgb(0, 176, 44);
+    filter: drop-shadow(0 2px 5px rgba(0, 176, 44, 0.45));
+}
+
+.feature-item:nth-child(2) svg {
+    stroke: rgb(181, 5, 171);
+    filter: drop-shadow(0 2px 5px rgba(181, 5, 171, 0.45));
+}
+
+.feature-item:nth-child(3) svg {
+    stroke: rgb(219, 0, 118);
+    filter: drop-shadow(0 2px 5px rgba(219, 0, 118, 0.45));
+}
+
+.feature-item:nth-child(4) svg {
+    stroke: rgb(139, 92, 246);
+    filter: drop-shadow(0 2px 5px rgba(139, 92, 246, 0.45));
 }
 
 .feature-item span {
@@ -2528,7 +2552,7 @@ body {
     align-self: flex-start;
     padding: 1.2rem 3rem;
     margin-top: 2vw;
-    background-color: #8B5CF6;
+    background-color: #8FAAB5;
     color: #0f1520;
     font-family: var(--font-heading);
     font-size: 1.1vw;
@@ -2664,8 +2688,12 @@ body {
     color: #8B5CF6;
 }
 
+.text-cyan {
+    color: #32be8d;
+}
+
 .industries-title .text-orange {
-    color: #a78bfa;
+    color: #32be8d;
     -webkit-text-stroke: 0px;
     -webkit-text-fill-color: initial;
     background: none;
@@ -2676,7 +2704,7 @@ body {
 .title-underline {
     width: 60px;
     height: 3px;
-    background-color: #8B5CF6;
+    background-color: #32be8d;
     margin: 1rem auto 0;
 }
 
@@ -2702,8 +2730,6 @@ body {
 }
 
 .industry-block:hover {
-    border-color: #ffffff;
-    box-shadow: 0 0 25px rgba(255, 255, 255, 0.25);
     transform: translateY(-8px);
 }
 
@@ -2763,14 +2789,69 @@ body {
     font-family: var(--font-heading);
     font-size: 1.15rem;
     font-weight: 700;
-    color: #ffffff;
     letter-spacing: 0.5px;
     text-transform: uppercase;
-    transition: color 0.4s;
+    transition: color 0.4s, transform 0.4s;
 }
 
-.industry-block:hover .industry-name {
-    color: #8B5CF6;
+/* Card 1: Restaurants (Purple) */
+.industry-block:nth-child(1) .industry-name {
+    color: #9368F6;
+}
+.industry-block:nth-child(1):hover {
+    border-color: #9368F6;
+    box-shadow: 0 0 25px rgba(147, 104, 246, 0.45);
+}
+.industry-block:nth-child(1):hover .industry-name {
+    color: #b393ff;
+}
+
+/* Card 2: Hotels (Cyan) */
+.industry-block:nth-child(2) .industry-name {
+    color: #17B8FF;
+}
+.industry-block:nth-child(2):hover {
+    border-color: #17B8FF;
+    box-shadow: 0 0 25px rgba(23, 184, 255, 0.45);
+}
+.industry-block:nth-child(2):hover .industry-name {
+    color: #5cd2ff;
+}
+
+/* Card 3: Cafes (Orange/Gold) */
+.industry-block:nth-child(3) .industry-name {
+    color: #CF850F;
+}
+.industry-block:nth-child(3):hover {
+    border-color: #CF850F;
+    box-shadow: 0 0 25px rgba(207, 133, 15, 0.45);
+}
+.industry-block:nth-child(3):hover .industry-name {
+    color: #ec9f24;
+}
+
+/* Card 4: Bakeries (Green) */
+.industry-block:nth-child(4) .industry-name {
+    color: #0C721B;
+}
+.industry-block:nth-child(4):hover {
+    border-color: #0C721B;
+    box-shadow: 0 0 25px rgba(12, 114, 27, 0.45);
+}
+.industry-block:nth-child(4):hover .industry-name {
+    color: #169f2e;
+}
+
+/* Card 5: Supermarkets (Pink) */
+.industry-block:nth-child(5) .industry-name {
+    color: #FF17B9;
+}
+.industry-block:nth-child(5):hover {
+    border-color: #FF17B9;
+    box-shadow: 0 0 25px rgba(255, 23, 185, 0.45);
+}
+.industry-block:nth-child(5):hover .industry-name {
+    color: #ff5cd1;
 }
 
 @media (max-width: 1024px) {
@@ -3001,7 +3082,7 @@ body {
 }
 
 .cta-title .text-blue {
-    color: #a78bfa;
+    color: #8fae7a;
     -webkit-text-stroke: 0px;
     -webkit-text-fill-color: initial;
     background: none;
@@ -3029,8 +3110,8 @@ body {
     display: inline-flex;
     align-items: center;
     gap: 1rem;
-    background-color: #8B5CF6;
-    color: #000000;
+    background-color: #385f0b;
+    color: #ffffff;
     padding: 0.6rem 2.5rem 0.6rem 0.6rem;
     border-radius: 50px;
     font-weight: 700;
@@ -3043,7 +3124,7 @@ body {
 
 .cta-btn:hover {
     transform: translateY(-3px);
-    background-color: #15a0de;
+    background-color: #4b7e12;
 }
 
 .cta-btn .btn-icon {
